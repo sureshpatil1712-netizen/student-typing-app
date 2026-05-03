@@ -41,7 +41,7 @@
 
                     <!-- Print Button -->
                     <button onclick="printPassagesToPDF()" class="flex items-center gap-2 px-4 py-2.5 bg-slate-800 hover:bg-slate-900 text-white rounded-lg transition-colors text-sm font-medium">
-                        <i class="fa-solid fa-print"></i> Print All Passages (PDF)
+                        <i class="fa-solid fa-print"></i> Print Passages
                     </button>
                 </div>
             </div>
@@ -56,6 +56,7 @@
                     </select>
                 </div>
                 <div class="pt-5 hidden md:block">
+                    <!-- Restart Button -->
                     <button onclick="resetTest()" class="flex items-center gap-2 px-6 py-2.5 bg-red-50 hover:bg-red-100 text-red-600 border border-red-200 rounded-lg transition-colors font-medium whitespace-nowrap">
                         <i class="fa-solid fa-arrow-rotate-right"></i> Restart
                     </button>
@@ -126,13 +127,13 @@
 
         <!-- Results Modal -->
         <div id="results-modal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 z-50">
-            <div class="bg-white rounded-2xl shadow-2xl w-full max-w-3xl overflow-hidden transform transition-all">
-                <div class="bg-slate-800 p-6 text-center text-white border-b-4 border-blue-500">
+            <div class="bg-white rounded-2xl shadow-2xl w-full max-w-3xl overflow-hidden transform transition-all flex flex-col max-h-[90vh]">
+                <div class="bg-slate-800 p-6 text-center text-white border-b-4 border-blue-500 flex-shrink-0">
                     <h2 class="text-3xl font-bold mb-2">Performance Report</h2>
                     <p class="text-slate-300" id="report-subtitle">Passage 1 • Screen Mode</p>
                 </div>
                 
-                <div class="p-8">
+                <div class="p-8 overflow-y-auto custom-scrollbar flex-grow">
                     <div class="grid grid-cols-2 gap-6 mb-8">
                         <div id="net-speed-card" class="p-6 rounded-xl border text-center">
                             <p class="text-slate-500 text-sm font-semibold uppercase tracking-wider mb-2">Final Net Speed</p>
@@ -151,7 +152,7 @@
                         </div>
                     </div>
 
-                    <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm">
+                    <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm mb-8">
                         <table class="w-full text-left text-sm">
                             <tbody class="divide-y divide-slate-100">
                                 <tr>
